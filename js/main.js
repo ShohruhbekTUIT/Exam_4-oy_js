@@ -1,7 +1,9 @@
 const elUserTemplate = document.querySelector(".users__template").content;
 const elPostTemplate = document.querySelector(".posts__template").content;
+const elCommentTemplate = document.querySelector(".comments__template").content;
 const elUserList = document.querySelector(".users__list");
 const elPostList = document.querySelector(".posts__list");
+const elCommentList = document.querySelector(".comments__list");
 
 
 async function getUsers(){
@@ -37,10 +39,7 @@ function renderUser(arr,element){
   clonedTemplate.querySelector(".users__mail").textContent = e.email;
   clonedTemplate.querySelector(".users__mail").setAttribute("href", `mailto:${e.email}`);
 
-
-    if(data.isComplated){
-      clonedTemplate.querySelector(".todo-list__check").checked = true;
-    }
+  
     element.appendChild(clonedTemplate);
   });
 }
@@ -55,7 +54,6 @@ getUsers();
 elUserList.addEventListener("click" , evt =>{
   if (evt.target.matches(".users__item")) {
     let IdUser = evt.target.dataset.userId;
-    // console.log(IdUser);
 
     async function getPost(){
       const response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
@@ -69,17 +67,14 @@ elUserList.addEventListener("click" , evt =>{
     
         arr.forEach(e => {
           // console.log(IdUser,e.userId);
-          if(IdUser == e.userId - 0) {
+          if(IdUser == e.userId) {
         
           const clonedTemplate = elPostTemplate.cloneNode(true);
 
-          clonedTemplate.querySelector(".posts__item").dataset.userId = e.id;
+          clonedTemplate.querySelector(".posts__item").dataset.postId = e.id;
           clonedTemplate.querySelector(".posts__title").textContent = e.title;
           clonedTemplate.querySelector(".posts__text").textContent = e.body;
-          // console.log(e.title);
-          if(data.isComplated){
-            clonedTemplate.querySelector(".todo-list__check").checked = true;
-          }
+         
 
         element.appendChild(clonedTemplate);
         }
@@ -95,3 +90,53 @@ elUserList.addEventListener("click" , evt =>{
     getPost();
   }
 });
+
+
+
+
+
+
+
+elPostList.addEventListener("click" , evt =>{
+  if (evt.target.matches(".posts__item")) {
+    let IdComment = evt.target.dataset.postId;
+
+    console.log(IdComment);
+
+    async function getComment(){
+      const response = await fetch(`https://jsonplaceholder.typicode.com/comments`);
+      const data = await response.json();
+      // console.log(data);
+    
+
+      function renderComment(arr,element){
+        element.innerHTML = "";
+  
+    
+        arr.forEach(e => {
+          // console.log(IdUser,e.userId);
+          if(IdComment == e.postId) {
+        
+          const clonedTemplate = elCommentTemplate.cloneNode(true);
+
+          clonedTemplate.querySelector(".comments__item").dataset.postId = e.id;
+          clonedTemplate.querySelector(".comments__title").textContent = e.name;
+          clonedTemplate.querySelector(".comments__link").textContent = e.email;
+          clonedTemplate.querySelector(".comments__link").setAttribute("href",`mailto:${e.email}`);
+          clonedTemplate.querySelector(".comments__text").textContent = e.body;
+
+        element.appendChild(clonedTemplate);
+        }
+        })
+        
+        
+      }
+      
+  renderComment(data , elCommentList);
+  }
+  
+     
+    getComment();
+  }
+});
+

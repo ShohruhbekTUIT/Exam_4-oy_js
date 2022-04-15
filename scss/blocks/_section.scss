@@ -112,6 +112,24 @@
   margin-top: 0;
 }
 
+.comments__list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding: 10px;
+}
+.comments__item{
+  position: relative;
+  font-family: "Rubik" , sans-serif;
+  color: gray;
+  background-color: #08031e;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+.comments__title{
+  margin-top: 0;
+}
+
   .uchburchak{
     position: absolute;
     bottom: 0px;
@@ -120,6 +138,18 @@
     width: 30px;
     height: 30px;
     border: 15px solid #0c0331;
+    border-top: none;
+    border-right-color: transparent;
+    border-left-color: transparent;
+  }
+  .comments__item .uchburchak{
+    position: absolute;
+    bottom: 0px;
+    left: -7px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 15px solid #08031e;
     border-top: none;
     border-right-color: transparent;
     border-left-color: transparent;
