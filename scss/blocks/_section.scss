@@ -1,0 +1,101 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(58, 12, 12); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0c0331; 
+}
+
+
+.site-info{
+  display: flex;
+}
+.users{
+  width: 34%;
+  background-color: #352f44;
+  overflow: auto;
+}
+.posts{
+  height: 640px;
+  width: 33%;
+  background-color: #fff;
+  overflow: auto;
+}
+.comments{
+  height: 640px;
+  width: 33%;
+  background-color: #000;
+  overflow: auto;
+}
+.users__list{
+  height: 640px;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+}
+.users__name{
+  color: #fff;
+  background-color: #05082c;
+  padding: 3px 20px;
+}
+.users__item{
+  border-left: 2px solid gray;
+  margin: 14px;
+  padding: 15px;
+}
+.users__info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.users__title{
+  color: gray;
+  margin: 0;
+}
+.users__id{
+  text-align: center;
+  vertical-align: middle;
+  font-size: x-large;
+  font-weight: 700;
+  width: 50px;
+  height: 50px;
+  padding: 10px 10px;
+  background-color: gray;
+  border: 2px solid darkblue;
+  border-radius: 50%;
+}
+.users__address{
+  font-size: small;
+  margin-bottom: 10px;
+}
+.company__name , .company__catchPhrase , .company__bs{
+  margin: 0;  
+  color: rgb(30, 114, 114);
+}
+
+
+
+
+
+
+  .uchburchak{
+    width: 20px;
+    height: 20px;
+    border: 10px solid black;
+    border-top: none;
+    border-right-color: white;
+    border-left-color: white;
+  }
