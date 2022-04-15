@@ -5,6 +5,10 @@ const elUserList = document.querySelector(".users__list");
 const elPostList = document.querySelector(".posts__list");
 const elCommentList = document.querySelector(".comments__list");
 
+const elLoader = document.querySelector(".lds-spinner");
+const elLoaderr = document.querySelector(".lds-spinnerr");
+
+
 
 async function getUsers(){
   const response = await fetch(`https://jsonplaceholder.typicode.com/users`);
@@ -52,6 +56,7 @@ getUsers();
 
 
 elUserList.addEventListener("click" , evt =>{
+  elLoader.style.display = "block";
   if (evt.target.matches(".users__item")) {
     let IdUser = evt.target.dataset.userId;
 
@@ -62,6 +67,7 @@ elUserList.addEventListener("click" , evt =>{
     
 
       function renderPost(arr,element){
+
         element.innerHTML = "";
   
     
@@ -80,24 +86,20 @@ elUserList.addEventListener("click" , evt =>{
         }
         })
         
-        
       }
       
   renderPost(data , elPostList);
+
   }
   
-     
     getPost();
   }
 });
 
 
 
-
-
-
-
 elPostList.addEventListener("click" , evt =>{
+  elLoaderr.style.display = "block";
   if (evt.target.matches(".posts__item")) {
     let IdComment = evt.target.dataset.postId;
 
@@ -111,7 +113,7 @@ elPostList.addEventListener("click" , evt =>{
 
       function renderComment(arr,element){
         element.innerHTML = "";
-  
+        
     
         arr.forEach(e => {
           // console.log(IdUser,e.userId);
