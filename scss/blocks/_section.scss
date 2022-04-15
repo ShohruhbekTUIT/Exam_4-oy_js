@@ -1,22 +1,23 @@
 ::-webkit-scrollbar {
   width: 10px;
+  padding: 9px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 10px grey; 
+  box-shadow: inset 0 0 10px rgb(17, 72, 23); 
   border-radius: 10px;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #0c0331; 
+  background: #028b36; 
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #110b1f; 
+  background: gray; 
 }
 
 
@@ -47,19 +48,25 @@
   padding: 10px;
 }
 .users__name{
-  color: #fff;
-  background-color: #050c5b;
+  color: red;
+  background-color: rgb(168, 163, 163);
   font-weight: 700;
-  padding: 3px 20px;
+  padding: 4px 20px;
+  box-shadow: 0 2px 5px 4px rgb(15, 252, 3);
 }
 .users__item{
+  position: relative;
   border-left: 2px solid gray;
   margin: 14px;
   padding: 15px;
   & div{
     margin-bottom: 10px;
   }
-
+  background-color: #0c0331;
+  box-shadow: 0 2px 5px 4px rgb(19, 79, 16);
+  &:hover{
+    box-shadow: 0 2px 5px 4px rgb(15, 252, 3);
+  }
 }
 .users__info{
   display: flex;
@@ -67,10 +74,15 @@
   justify-content: space-between;
 }
 .users__title{
-  color: gray;
+  text-align: center;
+  color: #fff;
   margin: 0;
+  margin: 0 auto;
+  margin-top: 15px;
 }
 .users__id{
+  position: absolute;
+  right: 4px;top: 4px;
   text-align: center;
   vertical-align: middle;
   font-size: x-large;
@@ -78,22 +90,30 @@
   width: 50px;
   height: 50px;
   padding: 10px 10px;
-  color: #0c0331;
+  color:green;
   background-color: gray;
-  border: 2px solid darkblue;
+  border: 2px solid rgb(15, 252, 3);
   border-radius: 50%;
 }
 .users__address{
   font-size: small;
   font-weight: 700;
-  margin-bottom: 10px;
   color: rgb(254, 223, 183);
+}
+.company{
+  margin-top: 15px;
 }
 .company__name , .company__catchPhrase , .company__bs{
   margin: 0;  
-  color: rgb(30, 114, 114);
+  color: rgb(248, 201, 138);
+  margin-bottom: 3px;
 }
-
+.users__email{
+  margin-top: 25px;
+}
+.users__email-tel{
+  display: inline-block;
+}
 
 
 .posts__list{
@@ -105,10 +125,17 @@
 .posts__item{
   position: relative;
   font-family: "Rubik" , sans-serif;
-  color: gray;
+  color: #fff;
   background-color: #0c0331;
   padding: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px 4px rgb(19, 79, 16);
+  & p{
+    color: gray;
+  }
+  &:hover{
+    box-shadow: 0 2px 5px 4px rgb(15, 252, 3);
+  }
 }
 .posts__title{
   margin-top: 0;
@@ -123,10 +150,17 @@
 .comments__item{
   position: relative;
   font-family: "Rubik" , sans-serif;
-  color: gray;
+  color: #fff;
   background-color: #08031e;
   padding: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px 4px rgb(19, 79, 16);
+  & p{
+    color: gray;
+  }
+  &:hover{
+    box-shadow: 0 2px 5px 4px rgb(15, 252, 3);
+  }
 }
 .comments__title{
   margin-top: 0;
@@ -328,7 +362,7 @@
   }
   .site-footer__icon{
     text-decoration: none;
-    color: rgb(22, 35, 98);
+    color: rgb(182, 188, 218);
     width: 24px;
     height: 24px;
     &:hover{
