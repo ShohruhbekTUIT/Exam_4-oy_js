@@ -401,6 +401,11 @@ img {
      object-fit: cover;
 }
 
+a {
+  text-decoration: none;
+  color: #6161b7;
+}
+
 .main {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -461,14 +466,14 @@ img {
 .posts {
   height: 640px;
   width: 33%;
-  background-color: #fff;
+  background-color: #272234;
   overflow: auto;
 }
 
 .comments {
   height: 640px;
   width: 33%;
-  background-color: #000;
+  background-color: #1c162c;
   overflow: auto;
 }
 
@@ -489,6 +494,10 @@ img {
   border-left: 2px solid gray;
   margin: 14px;
   padding: 15px;
+}
+
+.users__item div {
+  margin-bottom: 10px;
 }
 
 .users__info {
@@ -523,7 +532,9 @@ img {
 
 .users__address {
   font-size: small;
+  font-weight: 700;
   margin-bottom: 10px;
+  color: #fedfb7;
 }
 
 .company__name, .company__catchPhrase, .company__bs {

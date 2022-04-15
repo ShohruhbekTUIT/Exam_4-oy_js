@@ -31,13 +31,13 @@
 .posts{
   height: 640px;
   width: 33%;
-  background-color: #fff;
+  background-color: #272234;
   overflow: auto;
 }
 .comments{
   height: 640px;
   width: 33%;
-  background-color: #000;
+  background-color: #1c162c;
   overflow: auto;
 }
 .users__list{
@@ -55,6 +55,10 @@
   border-left: 2px solid gray;
   margin: 14px;
   padding: 15px;
+  & div{
+    margin-bottom: 10px;
+  }
+
 }
 .users__info{
   display: flex;
@@ -79,7 +83,9 @@
 }
 .users__address{
   font-size: small;
+  font-weight: 700;
   margin-bottom: 10px;
+  color: rgb(254, 223, 183);
 }
 .company__name , .company__catchPhrase , .company__bs{
   margin: 0;  
